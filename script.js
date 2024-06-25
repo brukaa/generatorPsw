@@ -83,12 +83,13 @@ for (const i of arrayTest) {
 const arrayChrFinal = [...arrayTest, ...arrayTestUpp, ...arrayChr];
 ///////////////////
 //////////
+
 const generatorPassword = function () {
-  let numerCasual = Math.trunc(Math.random() * (16 - 7 + 1) + 7); // (max - min + 1) + min
-  let count = Number(testInput.value) || numerCasual;
-  if (!count) return;
-  if (count < 7 || count > 16) return;
-  //
+  let numCasual = Math.trunc(Math.random() * (16 - 5 + 1) + 5); // (max - min + 1) + min
+  let count = Number(testInput.value) || numCasual;
+  if (count < 5) count = numCasual;
+  else if (count > 16) count = 16;
+
   const pswArr = [];
   while (count > 0) {
     pswArr.push(
@@ -101,9 +102,20 @@ const generatorPassword = function () {
   return pswArr.join("");
 };
 
+// senza console.log il rilsutato sarebbe la password stessa tipo 1h13b11bsk
+// ma non viene memorizzato da nessuna parte
+console.log(generatorPassword());
+const passwordHello = generatorPassword(); // memorizziamo il valore in una variabile
+
 buttonGenerator.addEventListener("click", function () {
   headingPsw.innerHTML = generatorPassword();
   headingPsw.classList.add("active");
+
+  const check = Number(testInput.value);
+  if (!check || check < 5 || check > 16) {
+    testInput.style.background = "red";
+  } else testInput.style.background = "blue";
+
   setTimeout(function () {
     headingPsw.classList.remove("active");
   }, "800");
