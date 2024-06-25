@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.link,
+button,
+.details,
+.icon {
+  display: inline-block;
+}
+
+/*
+*/
+/* T */
+body {
+  font-size: 2rem;
+  font-family: "Ubuntu Sans", sans-serif;
+  height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12rem;
+  font-weight: 500;
+}
+
+#passwordGen {
+  letter-spacing: 6px;
+  font-size: 6rem;
+  background: var(--light-200);
+  padding: 1.4rem 3rem;
+  border-radius: 10px;
+  transition: all 0.2s;
+
+  @media screen and (max-width: 56.25em) {
+    letter-spacing: 3px;
+    font-size: 4.5rem;
+  }
+
+  @media screen and (max-width: 37.5em) {
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    padding: 1.8rem;
+  }
+}
+
+#passwordGen.active {
+  transform: scale(1.1);
+  outline: 5px solid var(--light-200);
+  outline-offset: 10px;
+
+  @media screen and (max-width: 37.5em) {
+    outline-offset: 4px;
+    transform: scale(1.07);
+  }
+}
+
+/**/
+.btn {
+  font-size: inherit;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 6px;
+  border: none;
+  border-radius: 10rem;
+  background: var(--limeA-400);
+  transition: all 0.3s ease;
+  width: 34rem;
+
+  @media screen and (max-width: 37.5em) {
+    width: 20rem;
+  }
+}
+
+.btn:hover {
+  transform: translateY(-1rem);
+  background: linear-gradient(to right, #1565c0 75%, var(--limeA-400));
+
+  @media screen and (max-width: 37.5em) {
+    transform: none;
+  }
+}
+
+.test-input {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--light-200);
+  position: absolute;
+  top: 50%;
+  right: -5rem;
+  transform: translate(100%, -50%);
+  background: none;
+  box-shadow: 1rem 1rem 4rem rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: none;
+  width: 8rem;
+  height: 8rem;
+  transition: all 0.3s;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 200;
+
+  @media screen and (max-width: 75em) {
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, 70%);
+  }
+
+  @media screen and (max-width: 56.25em) {
+    transform: translate(50%, 50%);
+    font-size: 2.4rem;
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+.test-input:focus {
+  outline: none;
+  width: 10rem;
+}
+
+.main-box {
+  text-align: center;
+  width: 75rem;
+  position: relative;
+
+  @media screen and (max-width: 56.25em) {
+    width: 50.5rem;
+  }
+
+  @media screen and (max-width: 37.5em) {
+    width: 33.5rem;
+  }
+}
