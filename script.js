@@ -112,11 +112,11 @@ buttonGenerator.addEventListener("click", function () {
   headingPsw.classList.add("active");
 
   const check = Number(testInput.value);
-  if (!check || check < 5 || check > 16) {
-    testInput.style.background = "red";
-  } else testInput.style.background = "blue";
+  if (!check || check < 5 || check > 16) testInput.classList.add("active");
+  else testInput.classList.add("active-v");
 
   setTimeout(function () {
     headingPsw.classList.remove("active");
+    testInput.classList.remove("active", "active-v");
   }, "800");
 });

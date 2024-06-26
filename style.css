@@ -69,12 +69,9 @@ body {
 
 #passwordGen.active {
   transform: scale(1.1);
-  outline: 5px solid var(--light-200);
-  outline-offset: 10px;
 
   @media screen and (max-width: 37.5em) {
-    outline-offset: 4px;
-    transform: scale(1.07);
+    transform: scale(1.1);
   }
 }
 
@@ -135,6 +132,15 @@ body {
     width: 6.5rem;
     height: 6.5rem;
   }
+}
+
+.test-input.active {
+  background: red;
+}
+
+.test-input.active-v {
+  background: var(--limeA-400);
+  color: var(--dark-200);
 }
 
 .test-input:focus {
