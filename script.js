@@ -113,10 +113,8 @@ buttonGenerator.addEventListener('click', function () {
   headingPsw.classList.add('active')
 
   const check = Number(testInput.value)
-  if (!check)
-    headingRandomMex.innerHTML =
-      'Valore nullo o non consentito.<br>Random Mode attiva!'
-  else headingRandomMex.innerHTML = 'Random Mode attiva!'
+  if (!check || check < 7) headingRandomMex.innerHTML = 'Random Mode attiva!'
+  else headingRandomMex.innerHTML = ''
 
   if (!check || check < 7 || check > 16) {
     testInput.classList.add('active')
@@ -133,8 +131,4 @@ buttonGenerator.addEventListener('click', function () {
     headingPsw.classList.remove('active')
     testInput.classList.remove('active', 'active-v')
   }, '800')
-
-  setTimeout(function () {
-    headingPswLength.classList.remove('active')
-  }, '2000')
 })
