@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans');
 
 *,
 *::after,
@@ -36,7 +36,7 @@ button,
 /* T */
 body {
   font-size: 2rem;
-  font-family: "Ubuntu Sans", sans-serif;
+  font-family: 'Ubuntu Sans', sans-serif;
   height: 100vh;
   background: var(--dark);
   display: flex;
@@ -47,9 +47,43 @@ body {
   font-weight: 500;
 }
 
-#passwordGen {
-  letter-spacing: 6px;
+.details--password-length,
+.details--random {
+  font-size: 3.3rem;
+  font-weight: 800;
+  position: absolute;
+  top: -10rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: var(--limeA-400);
+  display: none;
+}
+
+.details--password-length.active {
+  display: block;
+}
+
+.details--random {
+  top: -15rem;
+  display: block;
+  transform: translate(-50%, -25rem);
+
+  @media screen and (max-width: 56.25em) {
+    font-size: 2rem;
+    width: 37rem;
+  }
+}
+
+.details--random.active {
+  top: -15rem;
+  transform: translate(-50%, 0);
+  transition: all 0.2s;
+}
+
+.details--password {
+  font-weight: 600;
   font-size: 6rem;
+  letter-spacing: 6px;
   background: var(--light-200);
   padding: 1.4rem 3rem;
   border-radius: 10px;
@@ -61,13 +95,13 @@ body {
   }
 
   @media screen and (max-width: 37.5em) {
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     font-size: 2.5rem;
     padding: 1.8rem;
   }
 }
 
-#passwordGen.active {
+.details--password.active {
   transform: scale(1.1);
 
   @media screen and (max-width: 37.5em) {
