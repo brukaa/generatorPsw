@@ -45,6 +45,7 @@ body {
   justify-content: center;
   gap: 12rem;
   font-weight: 500;
+  overflow: hidden;
 }
 
 .details--password-length,
